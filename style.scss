@@ -1,0 +1,1360 @@
+/*
+Theme Name: Savia new
+Author: Nicolás Picardi
+Version: 2.0
+*/
+
+
+
+// declaration of variables
+
+$color-1: #2a9d5a;
+$color-1-lighter: #4caf50;
+$color-1-lighterer: #66bb6a;
+
+$color-2: #959595;
+$color-2-darker: #666666;
+$color-2-darkerer: #333333;
+$color-2-lighter: #eeeeee;
+$color-2-beta: #d0d0d0;
+
+$white: #ffffff;
+$black: #000000;
+
+
+$facebook: #3b5998;
+$twitter: #1da1f2;
+
+
+
+$nacional : #78b2e2;
+$provincia : #76a27f;
+$emprendedores: #51859b;
+$opinion: #e57373;
+$internacional: #66b0a9;
+$futbol : #a4a878;
+$genero : #776e8c;
+
+
+
+$val-1: 0.1em;
+$val-2: 0.2em;
+$val-3: 0.3em;
+$val-4: 0.4em;
+$val-5: 0.5em;
+$val-6: 0.6em;
+$val-7: 0.7em;
+$val-8: 0.8em;
+$val-9: 0.9em;
+$val-10: 1em;
+$val-20: 2em;
+$val-30: 3em;
+$val-40: 4em;
+$val-50: 5em;
+$val-60: 5em;
+$val-70: 5em;
+
+$font-12: 12px;
+$font-18: 18px;
+$font-24: 24px;
+$font-36: 36px;
+$font-48: 48px;
+$font-96: 96px;
+$font-115: 115px;
+
+@mixin lines($top:0, $right:0, $down:0, $left:0) {
+  border-color: $color-2-beta;
+  border-style: solid;
+  border-width: $top $right $down $left;
+}
+
+
+.dont-break-out {
+
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  -ms-word-break: break-all;
+  word-break: break-all;
+  word-break: break-word;
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+
+}
+
+.exo-font{
+  font-family: 'Exo', sans-serif;
+}
+
+.playfar-font{
+  font-family: 'Playfair Display', serif;
+}
+
+.roboto-font{
+  font-family: 'Roboto', sans-serif;
+}
+
+.row{
+  margin: 0;
+}
+.no-pad{
+  padding: 0;
+}
+.padding-05{
+  padding-left: .25em;
+  padding-right: 0.25em;
+  padding-top: 0;
+  padding-bottom: 0 ;
+  @media screen and (max-width: 768px){
+    padding-top: 0.5em;
+  }
+}
+.padding-05top{
+  padding: 0.25em 0 0.25em 0;
+}
+.padding-01top{
+  padding: 0.5em 0  0;
+}
+.padding-05sp{
+  padding: 0.25em 0.25em 0em 0.25em;
+}
+
+#shareBtn{
+  cursor: pointer;
+  cursor: hand;
+}
+//----Guide-------------------
+// control+f to search each item
+  //------00-Body and headers
+  //------01-Logo and Navbar
+  //------02-Noticias-destacadas
+
+// 00-Body and headers, and other styles
+
+body{
+  @extend .roboto-font;
+}
+
+.lines{
+  @include lines(0, 1px, 0, 1px);
+  margin: auto;
+  min-height: 100vh;
+  padding: 0!important;
+  @media screen and (min-width: 1280px) and (max-width: 1400px) {
+  margin: auto;
+  width: 1010px;
+  }
+  @media screen and (min-width: 1280px) and (max-width: 1675px) {
+    margin-right: 260px;
+  }
+  @media screen and (min-width: 1366px) {
+    width: 1100px;
+    }
+}
+
+.ad-float-right{
+  @media screen and (max-width: 1279px) {
+      display: none!important;
+  }
+  @media screen and (min-width: 1280px) {
+    z-index: 9999999;
+    position: fixed;
+    top: 5%;
+    right: 0;
+    width: 250px;
+    height: 600px;
+    border: 1px solid $color-2-lighter;
+    display: block;
+  }
+  @media screen and (min-width: 1366px) {
+    top: 10%;
+    }
+  @media screen and (min-width: 1700px) {
+    margin-right: 1em;
+    }
+    @media screen and (min-width: 1800px) {
+      margin-right: 3em;
+      }
+      @media screen and (min-width: 1900px) {
+        margin-right: 4em;
+        }
+}
+
+.adfloat{
+  @media screen and (min-width: 1280px) and (max-width: 1400px) {
+  margin: auto;
+  width: 1010px;
+  }
+  @media screen and (min-width: 1280px) and (max-width: 1675px) {
+    margin-right: 260px;
+  }
+}
+ul{
+  padding-left: 5px;
+  list-style: none;
+}
+
+h3{
+  color: $black;
+  font-size: $font-36;
+  font-weight: medium;
+  @media screen and (max-width: 768px) {
+    font-size: $font-24;
+  }
+}
+
+.no-transition {
+  -webkit-transition: height 0.01s;
+  -moz-transition: height 0.01s;
+  -ms-transition: height 0.01s;
+  -o-transition: height 0.01s;
+  transition: height 0.01s;
+}
+
+.min-height{
+  min-height: 80vh;
+}
+.center{
+  text-align: center;
+}
+//01-logo and navbar
+
+  .navbar-light{
+    padding: 0.3em ;
+    margin: 0;
+    margin-top: 0.2em;
+    text-align: center;
+    font-size: 0.8rem;
+    @media (min-width: 1200px){
+      font-size: 0.92rem;
+    }
+    @media screen and (min-width: 991px) {
+    }
+    @media screen and (min-width: 768px) {
+          @include lines(1px, 0px, 1px, 0);
+          text-align: left;
+    }
+  }
+
+  .col11{
+    padding-top: 1em;
+    @media screen and (min-width: 991px) {
+    padding-top: 2.25em;
+    }
+  }
+
+  .edicion{
+    font-size: 1rem;
+    padding: 25px 0;
+    p{
+      display: inline-block;
+      margin-bottom: 0.5em;
+      padding-right: 15px;
+      padding-top: 10px;
+    }
+    img{
+      width: 25px;
+    }
+     a:link, a:visited, a:hover{
+        color: black!important;
+      }
+  }
+
+  .navbar-toggler{
+    top: -65px;
+    right: -20px;
+  }
+  .navbar-nav{
+    margin: auto
+  }
+  .nav-link{
+    @media screen and (max-width: 1200px) {
+    font-size: 14px;
+    }
+    @media screen and (max-width: 991px) {
+    font-size: 12px;
+    }
+    @media screen and (min-width: 768px) {
+      @include lines(0, 1px);
+      margin: 0 $val-8 0 0;
+      padding: 0 0.5em 0 0 !important;
+    }
+  }
+
+  .nav-item a:link{
+      color: $color-2-darker!important;
+    }
+  .nav-item a:visited{
+      color: $color-2-darker!important;
+    }
+  .nav-item a:hover{
+      color: $color-1-lighter!important;
+    }
+  .active a:link, .active a:visited,.active a:hover{
+      color: $color-1-lighter!important;
+    }
+  .date{
+    font-size: 16px;
+    text-align: left;
+    margin-top: -10px;
+    margin-bottom: 2em;
+    padding-left: 2.5em;
+    font-weight: 500;
+    color: $color-2;
+    @media screen and (max-width: 1200px) {
+      padding-left: 0.5em;
+    }
+  }
+  .social-2{
+    position: absolute;
+    top: 30px;
+    left: 5px;
+    font-size: 24px;
+    .fa-facebook-square{
+      color: $facebook;
+    }
+    .fa-twitter-square{
+      color: $twitter;
+    }
+  }
+  .social{
+    font-size: 15px;
+    float: right;
+    padding-top: 10px;
+    text-transform: uppercase;
+    a, a:active, a:hover, a:visited{
+      font-weight: 600;
+      margin-right: 10px;
+      padding: 2px 0;
+      color: $color-2-darker!important;
+      text-decoration: none !important;
+      border-bottom: 1px solid $color-1;
+    }
+  }
+
+  .social-bot{
+    font-size: 18px;
+    text-align: center;
+    padding-top: 10px;
+    text-transform: uppercase;
+    a, a:active, a:hover, a:visited{
+      font-weight: 600;
+      margin-right: 10px;
+      padding: 2px 0;
+      color: $color-2-darker!important;
+      text-decoration: none !important;
+      border-bottom: 1px solid $color-1;
+    }
+  }
+  .mail-prensa{
+    padding: 15px 0;
+  }
+  .fa-facebook-square{
+    color: $facebook;
+  }
+  .fa-twitter-square{
+    color: $twitter;
+  }
+  .fa-instagram{
+    color: $color-2!important;
+  }
+  .logo{
+    color: $color-1;
+    text-align: center;
+    font-size: 100px;
+    @extend .playfar-font;
+    padding: 0;
+    margin-bottom: 0;
+      @media screen and (max-width: 767px) {
+        font-size: $font-115/2;
+      }
+      a, a:hover, a:visited, a:active{
+        color: $color-1!important;
+        text-decoration: none!important;
+        }
+    }
+    .logowid-big{
+      width: 100%;
+        @media screen and (max-width: 768px ){
+
+        }
+
+      .argtext{
+        margin-top: -10px!important;
+        text-align: center;
+        font-weight: 600;
+      }
+    }
+  .ads{
+    visibility: hidden;
+      @media screen and (min-width: 768px) {
+        margin: $val-20 auto;
+        text-align: center;
+        visibility: visible;
+      }
+  }
+//02-Noticias-destacadas
+  .box-img{
+    position: relative;
+    .backgroundabs{
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+
+      background: rgba(0,0,0,0);
+      background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(26,26,26,0.85) 100%);
+      background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,0,0,0)), color-stop(100%, rgba(26,26,26,0.85)));
+      background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(26,26,26,0.85) 100%);
+      background: -o-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(26,26,26,0.85) 100%);
+      background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(26,26,26,0.85) 100%);
+      background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(26,26,26,0.85) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#1a1a1a', GradientType=0 );
+
+    }
+    .abs{
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      padding-left: 10px;
+      padding-right: 10px;
+      width: 100%;
+    }
+  }
+
+  .destacadabig{
+    img{
+      max-height: 380px!important;
+    }
+  }
+  .news-star{
+    width: 100%;
+    min-height: 300px;
+    background-color: $color-2-lighter;
+    padding: 50px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-bottom: 2em;
+      img{
+        width: 100%;
+        max-height: 188px;
+      }
+      .cat{
+        color: $color-1-lighter;
+        font-size: $font-18;
+        font-weight: 500;
+        text-transform: uppercase;
+      }
+      .smalltx{
+        font-size: 14px;
+      }
+      h2{
+        color: $white;
+        font-size: 34px;
+        font-weight: normal;
+        @media screen and (max-width: 991px) {
+        font-size: 30px;
+        }
+        @media screen and (max-width: 500px) {
+        font-size: 26px;
+        }
+      }
+      h3{
+        color: $white;
+        font-size: 20px;
+        font-weight: normal;
+        @media screen and (max-width: 991px) {
+        font-size: 18px;
+        }
+      }
+      p{
+        color: $white;
+        font-size: 16px;
+        font-weight: normal;
+        margin-bottom: $val-5;
+        width: 95%;
+      }
+  }
+
+//02-Noticias
+.linea-vertical{
+  @media screen and (min-width: 768px) {
+  @include lines(0px, 1px, 0px, 0);
+  }
+}
+.linea-bottom{
+  @include lines(0px, 0px, 1px, 0);
+}
+  .nolines{
+    @include lines(0px, 0px, 0px, 0);
+  }
+  .row-noticias{
+    margin-bottom: $val-6;
+  }
+
+  .news{
+    padding: $val-5 0;
+    @include lines(1px, 0px, 0px, 0);
+    .cat{
+      color: $color-1-lighter;
+      font-size: $font-18;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+    h2{
+      color: $black;
+      font-size: 26px;
+      font-weight: medium;
+    }
+    p{
+      text-align: justify;
+      color: $color-2-darker;
+      font-size: $font-18;
+      font-weight: normal;
+      margin-bottom: $val-20!important;
+      width: 100%;
+      padding-top: 0.5em;
+    }
+    time{
+      font-size: 16px;
+      font-weight: 500;
+      color: $color-2-darker;
+      position: absolute;
+      bottom: 0;
+      i{
+        color: #929292;
+      }
+    }
+    img{
+      max-width: 100%;
+    }
+  }
+
+  .news-single{
+    padding: $val-5 0;
+    @include lines(1px, 0px, 0px, 0);
+    @extend .dont-break-out;
+    .cat{
+      color: $color-1-lighter;
+      font-size: $font-18;
+      font-weight: 500;
+      padding: $val-5 0 $val-6;
+      margin-top: -5px;
+      text-transform: uppercase;
+    }
+    .tag{
+      display: inline;
+      text-transform: uppercase;
+      margin-left: 10px;
+      a{
+        margin: 0px 5px;
+        border-bottom: 2px solid $color-1;
+
+      }
+    }
+    .line-color{
+      width: 40px;
+      height: 3px;
+      background-color: $color-1;
+    }
+    h2{
+      margin-bottom: 0;
+      color: $color-2-darkerer;
+      font-size: 50px;
+      font-weight: 600;
+      padding: $val-2 0;
+      @media screen and (max-width: 768px) {
+        font-size: $font-36;
+      }
+    }
+    h4{
+      color: $color-2;
+      font-size: $font-18;
+      margin:  0!important;
+      padding: 1.5em 0;
+      p{
+        margin-bottom: 0!important;
+      }
+    }
+    h5{
+      color: $color-2;
+      font-size: $font-18;
+      margin:  0!important;
+      padding: 0;
+      p{
+        margin-bottom: 0!important;
+      }
+    }
+    p{
+      color: $color-2-darker;
+      font-size: 18px;
+      font-weight: normal;
+      margin-bottom: $val-20!important;
+      width: 100%;
+      text-align: justify;
+    }
+    time{
+      font-size: 14px;
+      font-weight: 500;
+      color: $color-2;
+      text-transform: uppercase;
+      float: right;
+      i{
+        color: #929292;
+      }
+    }
+    img{
+      width: 100%;
+      margin: 5px 0 $val-10;
+    }
+
+  }
+
+  .personajes{
+    padding-top: 20px;
+    padding-bottom: 10px;
+    ul{
+      margin-bottom: 0;
+      padding: 0;
+    }
+    li{
+      width: 70px;
+      display: inline;
+      padding: 0 5px;
+    }
+    img{
+      width:70px;
+      height: 70px;
+      border-radius: 50%;
+      border: 3px solid $color-2-beta;
+    }
+  }
+
+  .single-h3-sp{
+    font-size: 24px;
+    border-bottom: 2px solid black;
+    border-top: 1px solid black;
+    padding: 8px 0;
+    color: $color-2-darkerer;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+    text-align: center;
+    @media screen and (max-width: 767px) {
+      display: block;
+      font-size: 24px;
+      border-bottom: 2px solid black;
+      border-top: 1px solid black;
+      padding: 8px 0;
+      color: $color-2-darkerer;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  }
+  .line-color-2{
+    @media screen and (min-width: 768px) {
+    width: 40px;
+    height: 2px;
+    background-color: $color-1;
+    }
+  }
+
+
+
+.share{
+  width: 100%;
+  height: 50px;
+  margin-bottom: $val-10;
+  .facebook{
+    width: 49%;
+    height: 50px;
+    float: left;
+    background-color: $facebook;
+    text-align: center;
+    padding-top: $val-6;
+    color: $white;
+    font-size: $font-18;
+    font-weight: normal;
+  }
+  .twitter{
+    width: 49%;
+    height: 50px;
+    float: right;
+    background-color: $twitter;
+    text-align: center;
+    padding-top: $val-6;
+    color: $white;
+    font-size: $font-18;
+    font-weight: normal;
+  }
+}
+
+.share-mobile{
+
+  position: fixed;
+  width: 100%;
+  height: 50px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  i{
+    float: left;
+    font-size: 28px;
+    font-weight: normal;
+    color: white;
+  }
+}
+
+  .fb-btn{
+    background-color: #3b5998;
+    color: white;
+    height: 50px;
+    padding:10px;
+    padding-left: 37px;
+  }
+  .twitter-btn{
+    background-color: #1da1f2;
+    color: white;
+    height: 50px;
+    padding:10px;
+    padding-left: 37px;
+  }
+
+  .whatsapp-btn{
+    background-color: #25d366;
+    color: white;
+    height: 50px;
+    padding:10px;
+    padding-left: 37px;
+  }
+
+  .go-up{
+    background-color: $color-1;
+    color: white;
+    height: 50px;
+    padding:10px;
+    padding-left: 37px;
+  }
+
+  .pagination{
+    padding-left: 15px;
+    padding-top: $val-10;
+    font-size: $font-24;
+    font-weight: 500;
+  }
+    .savia-sub{
+      background-color: $color-1-lighter;
+      color: white;
+      font-style: normal;
+    }
+
+  // -- - personajes
+  .news-single-personajes{
+    padding: $val-5 0;
+    @include lines(1px, 0px, 0px, 0);
+    h2{
+      margin-bottom: 0;
+      margin-top: 15px;
+      color: $color-2-darkerer;
+      font-size: 40px;
+      font-weight: 600;
+      padding: 0;
+      @media screen and (max-width: 768px) {
+        font-size: $font-36;
+        margin-top: 0px;
+      }
+    }
+  }
+      .pic-personaje{
+        img{
+          width: 75px;
+          height: 75px;
+          border-radius: 50%;
+          float: right;
+        }
+      }
+      .personaje-bio{
+        margin-top: 20px;
+      }
+
+
+
+//--00 - sidebar
+  .sidebar-lines{
+    @media screen and (min-width: 768px) {
+      @include lines(0px, 0px, 0px, 1px);
+    }
+  }
+  .sidebar-widget{
+    div{
+      @include lines(1px, 0px, 0px, 0px);
+      padding: 15px 0 0;
+      div{
+        border: 0!important;
+        padding: 0 0;
+      }
+    }
+  }
+
+  .cuarenta{
+    height: 35px!important;
+  }
+  .lupa{
+    padding: 0;
+  }
+  .search2{
+    width: 130px;
+    margin-top: 0.2em;
+    @media screen and (max-width: 1200px) {
+      width: 85px;
+    }
+  }
+
+  .Noticias {
+    a{
+      background-color: red;
+    }
+  }
+
+  .greyfo{
+    background-color: #f0f0f0;
+    margin-top: 20px;
+    border-top: 4px solid #d0d0d0;
+  }
+
+  .recentposts{
+    time{
+      text-transform: uppercase;
+      color: $color-2;
+    }
+    li{
+      margin:auto;
+      padding-left: 0;
+      padding-right: 0;
+      padding-top: 10px;
+      border-bottom: 1px solid $color-2-beta;
+      max-width: 90%!important;
+    }
+  }
+
+
+  //-- 00 - Footer
+
+    footer{
+      margin: 15px;
+      margin-bottom: 0;
+      .left{
+        text-align: left;
+        margin: $val-10 auto 0;
+        padding-bottom: 0;
+      }
+      p{
+        margin:0;
+        font-size: $font-12;
+        color: $color-2-darker;
+        margin-top: -15px;
+      }
+      .seccion-footer{
+        margin: 25px auto;
+      }
+    }
+
+    .bloqf1{
+
+    }
+    .bloqf2{
+
+    }
+
+    .logo-small{
+      color: black;
+      text-align: center;
+      font-size: 70px;
+      @extend .playfar-font;
+      padding: 0;
+      display: inline-block;
+      a{
+        color: $color-1;
+        &:hover{
+          color: $color-1!important;
+          text-decoration: none;
+          }
+        &:visited{
+          color: $color-1!important;
+          }
+        }
+      }
+      .text-right{
+        text-align: right;
+        font-size: 18px;
+      }
+      .logowid{
+        width: 190px;
+      }
+
+      .lineamag{
+        border-color: #d0d0d0;
+        border-style: solid;
+        border-width: 1px 0px 0px 0;
+        padding: 1em 0;
+        i{
+          padding-right: 10px;
+        }
+      }
+
+      .padnew{
+        padding: 25px 0 0;
+
+      }
+  //-- 00 - others
+
+  .cat{
+    a{
+      color: $color-1-lighter!important;
+    }
+    a:hover{
+        color: $color-1-lighterer!important;
+        text-decoration: none;
+      }
+    a:visited{
+        color: $color-1-lighter!important;
+      }
+  }
+
+
+  a, a:visited, a:active{
+      color: $color-2-darker;
+      text-decoration: none!important;
+
+    }
+  a:hover{
+      color: $color-1-lighterer!important;
+      text-decoration: none!important;
+
+    }
+
+  //specials colors categoruas
+  @mixin ColorCat($c1, $c2, $back) {
+    margin: 0.5em 0;
+    display: inline-block;
+    a{
+      padding: 0.3em;
+      color: $c1!important;
+      background-color: $back!important;
+      display: inline-block;
+    }
+    a:hover{
+        color: $c1!important;
+        text-decoration: none;
+      }
+    a:visited{
+        color: $c2!important;
+      }
+  }
+
+  .cat{
+    @include ColorCat($white, $white, $color-2);
+  }
+  .nacional{
+      @include ColorCat($white, $white, $nacional);
+  }
+  .buenosaires{
+      @include ColorCat($white, $white, $provincia);
+  }
+  .violencia-de-genero{
+    @include ColorCat($white, $white, $genero);
+  }
+  .emprendedores{
+    @include ColorCat($white, $white, $emprendedores);
+  }
+  .futbol{
+    @include ColorCat($white, $white, $futbol);
+  }
+  .internacional{
+    	@include ColorCat($white, $white, $internacional);
+  }
+  .opinion{
+      @include ColorCat($white, $white, $opinion);
+  }
+
+  .tag-2{
+    display: inline-block;
+    a:link{
+      color: $color-2-darkerer!important;
+      }
+    a:hover{
+      color: $color-2-darkerer!important;
+      text-decoration: none;
+      }
+    a:visited{
+      color: $color-2-darkerer!important;
+      }
+    }
+
+  .foco{
+    background: #eeeeee!important;
+    margin: 2em 0;
+    .nacional-wb{
+      border-left: 20px solid $nacional;
+      padding: 15px 15px;
+      text-align: right;
+      .cat-2{
+        a:link{
+          color: $nacional!important;
+          }
+        a:hover{
+          color: $nacional!important;
+          text-decoration: none;
+          }
+        a:visited{
+          color: $nacional!important;
+          }
+        }
+      }
+      .buenosaires-wb{
+        border-left: 20px solid $provincia;
+        padding: 15px 15px;
+        text-align: right;
+        .cat-2{
+          a:link{
+            color: $provincia!important;
+            }
+          a:hover{
+            color: $provincia!important;
+            text-decoration: none;
+            }
+          a:visited{
+            color: $provincia!important;
+            }
+        }
+      }
+      .violencia-de-genero-wb{
+        border-left: 20px solid $genero;
+        padding: 15px 15px;
+        text-align: right;
+        .cat-2{
+          a:link{
+            color: $genero!important;
+            }
+          a:hover{
+            color: $genero!important;
+            text-decoration: none;
+            }
+          a:visited{
+            color: $genero!important;
+            }
+        }
+      }
+      .emprendedores-wb{
+        border-left: 20px solid $emprendedores;
+        padding: 15px 15px;
+        text-align: right;
+        .cat-2{
+          a:link{
+            color: $emprendedores!important;
+            }
+          a:hover{
+            color: $emprendedores!important;
+            text-decoration: none;
+            }
+          a:visited{
+            color: $emprendedores!important;
+            }
+        }
+      }
+      .futbol-wb{
+        border-left: 20px solid $futbol;
+        padding: 15px 15px;
+        text-align: right;
+        .cat-2{
+          a:link{
+            color: $futbol!important;
+            }
+          a:hover{
+            color: $futbol!important;
+            text-decoration: none;
+            }
+          a:visited{
+            color: $futbol!important;
+            }
+        }
+      }
+      .internacional-wb{
+        border-left: 20px solid $internacional;
+        padding: 15px 15px;
+        text-align: right;
+        .cat-2{
+          a:link{
+            color: $internacional!important;
+            }
+          a:hover{
+            color: $internacional!important;
+            text-decoration: none;
+            }
+          a:visited{
+            color: $internacional!important;
+            }
+        }
+      }
+      .opinion-wb{
+        border-left: 20px solid $opinion;
+        padding: 15px 15px;
+        text-align: right;
+        .cat-2{
+          a:link{
+            color: $opinion!important;
+            }
+          a:hover{
+            color: $opinion!important;
+            text-decoration: none;
+            }
+          a:visited{
+            color: $opinion!important;
+            }
+        }
+      }
+      h6{
+        margin-bottom: 0;
+        margin-top: 10px;
+        font-size: 1.8em;
+        color: $color-2-darker;
+      }
+      a:link{
+        color: $black!important;
+        }
+      a:hover{
+        color: $black!important;
+        text-decoration: none;
+        }
+      a:visited{
+        color: $black!important;
+        }
+    }
+
+    .cat-2{
+      display: inline-block!important;
+    }
+.savia-h3{
+  font-size: 24px;
+  text-align: center;
+  border-bottom: 2px solid black;
+  border-top: 1px solid black;
+  padding: 8px 0;
+  color: $color-2-darkerer;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.savia-h3-alt{
+  font-size: 22px;
+  border-bottom: 2px solid white;
+  border-top: 1px solid white;
+  padding: 8px 0;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  @media screen and (max-width: 991px) {
+  font-size: 16px;
+  }
+}
+.opinion-index{
+  margin-top: 0.5em;
+  @media screen and (min-width: 768px) {
+  margin-top: 1.5em;
+  background: $color-2-lighter;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  }
+  h3{
+    margin-bottom: 2em;
+  }
+}
+.opinion-single{
+  margin-bottom: 10px;
+  @media screen and (min-width: 768px) {
+  margin-bottom: 0px;
+  }
+  }
+  h4 {
+    font-size: 1.2em;
+    @media screen and (min-width: 768px) {
+    font-size: 1.6em;
+    }
+  }
+
+.opinion-single-in{
+  border-bottom: 2px solid black;
+  border-top: 1px solid black;
+  margin: 1em 0;
+  padding: 1em 0;
+  .col-md-3 {
+    text-align: center;
+  }
+  img{
+    margin: 0;
+    text-align: center;
+  }
+  p{
+    font-size: 16px;
+    margin-top: 5px;
+    margin-bottom: 0!important;
+  }
+}
+
+.author-op-single{
+  color: $color-2-darker;
+  text-transform: uppercase;
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+.author-op{
+  color: $color-1-lighter;
+  text-transform: uppercase;
+}
+.picture{
+  img{
+    width: 100%;
+  }
+}
+.carousel-caption{
+  padding-bottom: 0!important;
+  h2{
+    font-size: 22px;
+  }
+  a:link{
+    color: $black!important;
+    }
+    a:hover{
+      color: $black!important;
+      text-decoration: none;
+      }
+    a:visited{
+      color: $black!important;
+
+      }
+}
+
+
+//sectiones horizontales
+  .seccion-horizontal{
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: white!important;
+  }
+
+  .m-100{
+    img{
+      max-width: 100%;
+      margin-bottom: 10px;
+    }
+    h2{
+      font-size: 24px;
+    }
+    a:link{
+      color: $white!important;
+    }
+    a:hover{
+      color: $white!important;
+      text-decoration: none;
+    }
+    a:visited{
+      color: $white!important;
+    }
+  }
+
+  .linea-top-w{
+    border-top: 1px solid white;
+    padding-top: 8px;
+    a:link{
+      color: $white!important;
+      }
+    a:hover{
+      color: $white!important;
+      text-decoration: none;
+    }
+    a:visited{
+      color: $white!important;
+    }
+  }
+
+  .h3-sh{
+    text-align: center;
+    h3{
+      text-align: center;
+    }
+    img{
+      margin: 15px 0;
+    }
+  }
+
+  //1. Emprendedores
+
+    .emprendedores-theme{
+      background-color: $emprendedores;
+    }
+
+  //2. Buenos Aires
+
+    .provincias-theme{
+      background-color: $provincia;
+    }
+
+  //3. Nacional
+    .nacional-theme{
+      background-color: $nacional;
+    }
+
+  //4. Internacional
+
+  .internacional-theme{
+    background-color: $internacional;
+  }
+
+  //5. violencia de genero
+  .genero-theme{
+    background-color: $genero;
+  }
+
+  //6. futbol
+  .futbol-theme{
+    background-color: $futbol;
+  }
+
+
+.w-100{
+  height: 181px!important;
+}
+
+.carousel-caption {
+  bottom: 10px;
+
+}
+
+.carousel-item{
+  img{
+    opacity: 0.5;
+  }
+}
+
+.bar-savia-separador{
+  width: 95%;
+  height: 1px;
+  background-color: $color-2;
+  margin: 1em auto;
+
+}
+
+
+
+.publicidad-gif{
+  img{
+    max-width: 100%;
+  }
+}
